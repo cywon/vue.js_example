@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- <style>
+      table, tr, td { border: 1px solid blue; }
+      td:nth-last-of-type(-n+2) { text-align: right; }
+  </style> -->
+  
+</head>
+<body>
+
+  <!-- <div id="app">
+    <div class="container">
+      <div class="row">
+        <a class="btn waves-effect waves-red blue" @click="showMessage($event)">wireless</a>
+        <a class="btn-flat waves-effect waves-teal" @click="showMessage($event)">
+          <i class="material-icons left">cloud</i>cloud
+        </a>
+        <a class="btn-floating waves-effect waves-yellow" @click="showMessage($event)">
+          <i class="material-icons right">wifi</i>wifi
+        </a>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- table -->
+  <!-- <div id="app">
+      <div class="container">
+          <table class="highlight responsive-table">
+              <thead class="blue white-text">
+                <tr>
+                    <th>주문번호</th>
+                    <th>상품명</th>
+                    <th>수량</th>
+                    <th>가격</th>
+                </tr>
+              </thead>    
+              <tbody>
+                <tr v-for="order in orders" :key="order.order_num">
+                  <td>{{order.order_num}}</td>
+                  <td>{{order.item}}</td>
+                  <td>{{order.quantity}}</td>
+                  <td>{{order.price}}</td>
+                </tr>
+              </tbody>
+            </table>
+      </div> 
+    </div>  -->
+
+  <!-- card -->
+  <div id="app">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="card blue darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">파리(Paris)</span>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, quae laudantium. Doloremque facilis labore quia maiores voluptate tempora sint amet illum a, repudiandae deleniti perspiciatis necessitatibus veniam rem, corrupti adipisci.</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="card">
+              <div class="card-image">
+                <img src="images/praha.jpg">
+                <span class="card-title">프라하(Praha, Prague)</span>
+              </div>
+              <div class="card-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolore, quod exercitationem deserunt commodi aliquam labore aliquid similique perspiciatis at sequi quas eligendi, nostrum animi, quisquam repellat odit veritatis iusto?</p>
+              </div>
+              <div class="card-action">
+                <a href="#">This is a link</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m4">
+            <div class="card">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="images/vienna.jpg">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">비엔나(Vienna, Wien)<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">비엔나(Vienna, Wien)<i class="material-icons right">close</i></span>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet unde sint corporis totam. Vel recusandae necessitatibus nulla? Culpa voluptatem fugit placeat, laudantium fugiat vero molestias! Quis blanditiis ad eos tempora.</p>
+              </div>
+            </div>
+          </div>        
+      </div>  
+
+
+
+
+  <!-- <div id="app">
+    <div class="container">
+      <section class="slider">
+        <ul class="slides">
+            <li>
+              <img src="images/paris.jpg"> 
+              <div class="caption center-align">
+                <h2 class="white-text">에펠탑, 루브르 박물관이 있는 파리로 Go!</h2>
+                <h5 class="light white-text text-lighten-3 hide-on-small-only">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Fugiat laudantium doloribus vero, perferendis pariatur accusantium 
+                    minus quidem consequuntur nobis recusandae?
+                </h5>
+              </div>
+            </li>
+            <li>
+              <img src="images/praha.jpg"> 
+              <div class="caption left-align">
+                <h2 class="blue-text">여성들의 로망 - 프라하성, 천문시계가 있는 곳</h2>
+                <h5 class="light blue-text text-lighten-3 hide-on-small-only">Lorem ipsum dolor, 
+                  sit amet consectetur adipisicing elit. Odio sint fugiat nisi architecto, 
+                  alias deserunt amet praesentium aliquam illo aliquid?</h5>
+              </div>
+            </li>
+            <li>
+              <img src="images/vienna.jpg"> 
+              <div class="caption right-align">
+                <h2 class="yellow-text">세계에서 가장 살기좋은 도시 1위</h2>
+                <h5 class="light yellow-text  hide-on-small-only">Lorem ipsum,
+                    dolor sit amet consectetur adipisicing elit. Neque eaque beatae voluptatibus 
+                    praesentium itaque facilis molestias, perferendis eveniet libero minima?</h5>
+              </div>
+            </li>
+          </ul>
+      </section>
+    </div> 
+  </div>   -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>   -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="app.js"></script>     
+</body>
+</html>

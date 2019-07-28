@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--https://fontawesome.com/ -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body id="home" class="scrollspy">
+  <div id="app">
+    <div>   <!-- Navbar -->
+      <div class="container">
+        <nav class="cyan">
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">체르니의 여행</a>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger">
+              <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li v-for="link in navlinks" :key="link.text"><a :href="link.href">{{link.text}}</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>    
+    </div>    
+    <ul class="sidenav" id="nav-mobile">   <!--스마트폰을 위한 메뉴 sidenav -->
+      <li v-for="link in navlinks" :key="link.text"><a :href="link.href">{{link.text}}</a></li>
+    </ul>
+    <!--추후 추가--> 
+    <div class="container">
+      <div class="slider">
+        <ul class="slides">
+          <li v-for="slide in slides" :key="slide.title">
+            <img :src="slide.imgsrc"> 
+            <div class="caption center-align">
+              <h2>{{slide.title}}</h2>
+              <h5 class="light grey-text text-lighten-3 hide-on-small-only">{{slide.description}}</h5>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div> 
+    <div class="container scrollspy"> <!-- 검색 -->
+      <div id="search" class="cyan white-text center">
+        <div class="row">
+          <div class="col s12">
+            <h3>검색</h3>
+            <div class="input-field">
+              <i class="material-icons prefix">location_on</i>
+              <input type="text" class="white grey-text autocomplete" id="autocomplete-input" placeholder="드라스덴, 파리, 프라하, ...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container scrollspy"><!-- 관광명소 -->
+      <div id="attractions" class="row">
+        <h4 class="center"><span class="blue-text">관광</span>명소</h4>
+        <div class="col s12 m4" v-for="attraction in attractions" :key="attraction.title">
+          <div class="card">
+            <div class="card-image">
+              <img :src="attraction.imgsrc" alt="">
+              <span class="card-title">{{attraction.title}}</span>
+            </div>
+            <div class="card-content"> {{attraction.details}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </div>    
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+  <script src="/js/app.js"></script>
+  <script src="/js/matcon.js"></script>
+</body>
+</html>

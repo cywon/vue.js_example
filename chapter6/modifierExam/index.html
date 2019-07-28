@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model.lazy ="userId" placeholder="아이디를 입력하세요." />
+    <input type="password" v-model ="password" placeholder="비밀번호를 입력하세요." /> 
+    <input type="number" v-model.number="age" placeholder="나이를 입력하세요" />   
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>  
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+          userId:'',
+          password:'',
+          age:0
+        }
+      }
+    })
+
+  </script>  
+</body>
+</html>

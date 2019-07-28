@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul{ list-style: none; padding: 0; }
+    li{ background-color: #a7ffeb; border: 2px solid teal; padding:5px; margin-bottom:5px; }
+    p{ background-color:blue; color:white; padding:5px; }
+  </style>  
+</head>
+<body>
+  <div id="app">
+    <span>노트북</span><br />
+    <ul>
+      <li v-for="(company, idx) in companies" :key="idx">
+        <input type='checkbox' v-bind:value='company' v-model="selectedCompanies" >
+          {{ company.name }}
+      </li>
+    </ul>
+    <button @click="selectAll">모두 선택</button>
+    <button @click="reset">모두 해제</button>
+    <div>
+      <ul>
+        <li v-for="( selCom,idx ) in selectedCompanies" :key="idx">
+          <strong>{{ selCom.name }}</strong> <strong>{{ selCom.product }}</strong> 
+          <strong>{{ selCom.price | currency }}원</strong> 
+        </li>
+      </ul>      
+    </div>
+    <p>합계 : {{ totalPrice | currency }}원</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script>
+    new Vue({ 
+      el:'#app',
+      data(){
+        return{
+          companies:[
+            { name:'LG', product:'LG전자 2019 그램 15ZD990-VX50K', price:1402000 },
+            { name:'SAMSUNG', product:'삼성전자 2019 노트북 Pen S NT950SBE-X716A', 
+              price:2157000},
+            { name:'Lenovo', product:'레노버 LEGION Y530-15ICH i7 1060 Dark Edition', 
+              price:1313000 },
+            { name:'ASUS', product:'ASUS TUF FX505GM-BQ234', price:1127000 },
+            { name:'Apple', product:'APPLE 맥북프로 2018년형 MR942KH/A (SSD 512GB)', 
+              price:2769000},
+          ],
+          selectedCompanies:[] 
+        }        
+      },
+      methods:{
+        selectAll(){ this.selectedCompanies = this.companies; },
+        reset(){  this.selectedCompanies = []; }
+      },
+      computed: {
+        totalPrice() {
+          var totalAmount = 0;
+          for(i=0; i< this.selectedCompanies.length;i++) {
+            totalAmount += this.selectedCompanies[i].price;
+          }
+          return totalAmount;
+        }
+      },
+      filters: {
+        currency(value) {
+          return new Intl.NumberFormat("ko-KR",{ style: "decimal"}).format(value);
+        }
+      }
+
+
+    });
+  </script>   
+</body>
+</html>

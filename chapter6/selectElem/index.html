@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+      <!-- <select v-model="selectedCity">
+          <option disabled value="">여행하고 싶은 도시를 선택하세요.</option>
+          <option>Seoul</option>
+          <option>Paris</option>
+          <option>Seattle</option>
+          <option>Venezia</option>
+        </select>
+        <span>선택된 도시 : {{selectedCity}}</span> -->
+  
+
+      <select v-model="selectedCity" multiple>
+        <option disabled value="">여행하고 싶은 도시를 선택하세요.</option>
+        <option v-for="city in cities" :key="city">{{city}}</option>
+      </select>
+      <span>선택된 도시 : {{selectedCity}}</span>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data : {
+        selectedCity:[],
+        //selectedCity:'',
+        cities: ['Seoul','Paris', 'Seattle', 'Chicago', 'New York', 'Rome', 'Praha', 'Venezia', 'Budapest']
+      }
+    })
+  </script>
+</body>
+</html>

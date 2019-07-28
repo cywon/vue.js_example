@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #app{ 
+      background: blue;
+      padding: 6px;
+      color:white;
+    }
+    .box{ 
+      background: teal;
+      margin-top:10px;
+    }
+    .box button {
+      margin : 4px;
+    }
+  </style>  
+</head>
+<body>
+  <div id="app">
+    {{name}}
+    <child-component v-on:sendmessage="receivemessage"></child-component>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    Vue.component("child-component", {
+      template: `<div class="box">
+                  <button @click="sendmessage()">부모 컴포넌트로 데이터 전달</button>
+                </div>`,
+      data(){
+        return {
+          message:'ChildComponent에서 보낸 메시지'
+        }
+      },
+      methods: {
+        sendmessage() {
+          this.$emit('sendmessage', this.message);
+        }
+      }
+    });
+    new Vue({
+      el:'#app',
+      data : { 
+        name: '$emit을 이용한 데이터 전달'        
+      },
+      methods: {
+        receivemessage(msg) {
+          this.name = msg;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

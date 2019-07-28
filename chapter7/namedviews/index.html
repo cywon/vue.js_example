@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    nav { text-align: right; padding-right: 20px; }
+    nav a { font-weight: bold; color: white; }
+    li { display:inline-block; padding: 5px; } 
+    li a { font-weight: bold; color: black; }
+  </style>  
+</head>
+<body>
+  <div id="app">
+    <nav class="teal">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/admin">Admin</router-link> 
+    </nav>
+    <router-view></router-view>
+    <router-view name="first"></router-view>
+    <router-view  name="second"></router-view> 
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="router.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

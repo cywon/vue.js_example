@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+      a {
+        margin-top: 10px;
+        margin-left: 5px;
+      }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <table>
+      <thead class="blue white-text">
+        <th>직원번호</th><th>직원이름</th><th>이메일</th><th></th>
+      </thead>
+      <tbody>
+        <tr v-for="emp in employees" :key="emp.id">
+          <td>{{emp.id}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.email}}</td>
+          <td>
+            <button @click="showForm()">추가</button>
+            <button @click="showForm(emp)">수정</button>
+            <button @click="deleteEmployee(emp.id)">삭제</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>   
+    <div v-show="show == true" class="row">
+      <div class="row">
+        <div class="input-field col s2">
+          <input  type="text" v-model="employee.id">
+          <label class="active" for="id">번호</label>
+        </div>
+        <div class="input-field col s4">
+          <input  id="name" type="text" v-model="employee.name">
+          <label class="active" for="name">이름</label>
+        </div>
+        <div class="input-field col s4">
+          <input  id="email" type="text"  v-model="employee.email">
+          <label class="active" for="email">이메일</label>
+        </div>
+      </div>
+    </div>
+    <a class="waves-effect waves-light btn " @click="btnOK">확인</a>
+    <a class="waves-effect waves-light btn" @click="btnCancel">취소</a>
+       
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

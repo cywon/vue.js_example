@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .imgdiv{
+      margin:4px;
+      border: 4px solid blue;
+      display:inline-block;
+    }
+    img{
+      width:240px;
+      height:180px;
+      padding: 3px;
+    }
+    a{
+      text-align: center;   
+      display:block;   
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="imgdiv" v-for="img in images" :key="img.text">
+      <a :href="img.url">{{img.text}}</a>
+      <img v-bind:src="img.src" />
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        images: [
+          {text:'암스테르담', src:'./imgs/amsterdam.jpg', url:'https://www.raileurope.co.kr/place/amsterdam-centraal'},
+          {text:'파리', src:'./imgs/paris.jpg', url:'https://www.louvre.fr/en/homepage'},
+          {text:'프라하', src:'./imgs/praha.jpg', url:'https://www.prague.eu/en'},
+          {text:'비엔나', src:'./imgs/vienna.jpg',url:'https://www.belvedere.at/en'},
+        ]
+      }      
+    })
+  </script>
+</body>
+</html>

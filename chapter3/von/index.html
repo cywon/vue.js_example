@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <div class="container">
+      <div class="card-panel teal lighten-2">
+        <h5 v-on:click="name= '미세먼지없음'">{{ name }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="app">
+    <div class="container">
+      <div class="card-panel teal lighten-2">
+        <h5 v-on:click="name= '미세먼지없음'">{{ name }}</h3>
+      </div>
+      <div class="card-panel teal lighten-2">
+        <h5 v-on:click="handleEvent">{{ info }}</h3>
+      </div>  
+    </div>
+  </div> -->
+    
+  <!-- <div id="app">
+    <div class="container">
+        <table class="highlight">
+          <tr class="blue white-text text-darken-4"><th>번호</th><th>도시</th><th>동작</th></tr>
+          <tr v-for="(city, idx) in cities" v-bind:key="city">
+            <td> {{ idx }} </td>
+            <td> {{ city }} </td>
+            <td><button class="btn" v-on:click="handleEvent(city)">선택</button></td> 
+          </tr>
+        </table>
+        <h4 class="blue-text text-darken-4 left-align">{{ message }} </h4>
+    </div>
+  </div> -->
+
+  <!-- <div id="app">
+    <div class="container">
+        <table class="highlight">
+          <tr class="blue white-text text-darken-4"><th>번호</th><th>도시</th><th>동작</th></tr>
+          <tr v-for="(city, idx) in cities" v-bind:key="city">
+            <td> {{ idx }} </td>
+            <td> {{ city }} </td>
+            <td><button class="btn" v-on:click="handleEvent(city)" 
+                v-on:mouseover="handleMultiEvent(city, $event)" v-on:mouseleave="handleMultiEvent(city, $event)">선택</button></td>
+          </tr>
+        </table>
+        <h4 class="blue-text text-darken-4 left-align">{{ message }} </h4>
+    </div>
+  </div> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+
+    var vm = new Vue({
+      el:'#app',
+      data: function () {
+        return {
+          name:"미세먼지있음",
+        }
+      }
+    })
+
+    // var vm = new Vue({
+    //   el:'#app',
+    //   data: function () {
+    //     return {
+    //       name:"미세먼지있음",
+    //       info: "이벤트정보"
+    //     }
+    //   },
+    //   methods : {
+    //     handleEvent($e) {
+    //       this.info = $e.type;
+    //     }
+    //   }
+    // })
+
+    // var vm = new Vue({
+    //   el:'#app',
+    //   data: function () {
+    //     return {
+    //       message : '',
+    //       cities : ['파리', '잘쯔부르크', '베네치아', '드라스덴', '프라하']
+    //     }
+    //   },
+    //   methods : {
+    //     handleEvent(inVal) {
+    //       this.message = `선택된 도시 : ${inVal}`;
+    //     },
+    //     handleMultiEvent(inCity, $event) {
+    //       if($event.type == "mouseover") {
+    //         this.message = `mouseover 이벤트 발생 : ${inCity}`;
+    //       } else {
+    //         this.message = '';
+    //       }
+    //     }
+        
+    //   }
+    // })
+  </script>
+  
+</body>
+</html>

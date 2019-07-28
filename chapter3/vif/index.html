@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    p{
+      border: 4px solid teal;
+      background: yellow;
+    }
+  </style>
+  <!-- <style>
+    #app > div{
+      border: 4px solid teal;
+      background: yellow;
+      padding: 4px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    img {
+      height: 50%;
+      width: 100%;
+    }
+  </style> -->
+</head>
+<body>
+  <div id="app">
+    <h3>v-if directive를 이용한 조건처리</h3>
+    <p v-if="error">에러 발생 : 이미지를 로드하지 못했습니다.</p>
+    <button v-on:click="error = !error">에러 ON-OFF</button>
+  </div>
+
+  <!-- <div id="app">
+    <h3>v-if directive를 이용한 조건처리</h3>
+    <p v-if="error">에러 발생 : 이미지를 로드하지 못했습니다.</p>
+    <p v-else>에러가 발생하지 않았습니다.</p>
+    <button v-on:click="error = !error">에러 ON-OFF</button>
+  </div> -->
+
+  <!-- <div id="app">
+    <h3>v-if directive를 이용한 조건처리</h3>
+    <p v-if="error">에러 발생 : 이미지를 로드하지 못했습니다.</p>
+    <p v-else-if="appear"><img src="venezia.jpg" /> </p>
+    <p v-else>에러가 발생하지 않았습니다.</p>
+    <button v-on:click="error = !error">에러 ON-OFF</button>
+  </div> -->
+  
+  <!-- <div id="app">
+    <h3>v-if else-if directive를 이용한 조건처리</h3>
+    <p v-if="error">에러 발생 : 이미지를 로드하지 못했습니다. </p>
+    <p>오늘은 산책하기 좋은 날입니다.</p>
+    <p v-else-if="appear"><img src="venezia.jpg" /> </p>
+    <p v-else>에러가 발생하지 않았습니다.</p>
+    <button v-on:click="error = !error">에러 ON-OFF</button>
+  </div> -->
+
+  <!-- <div id="app">
+    <div v-if="error">에러 발생 : 이미지를 로드하지 못했습니다.</div>
+    <div v-show="appear">
+        <img src="venezia.jpg">
+    </div>
+    <button v-on:click="errorToggle">에러 ON-OFF</button> 
+  </div> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el:'#app',
+      data: {
+        error: false
+      }
+    })
+
+    // new Vue({
+    //   el:'#app',
+    //   data: {
+    //     error: false,
+    //     appear: true
+    //   }
+    // })
+
+    // new Vue({
+    //   el:'#app',
+    //   data: {
+    //     error: true,
+    //     appear:false
+    //   },
+    //   methods: {
+    //     errorToggle() {
+    //       this.error = !this.error
+    //       if(this.error == false) {
+    //         this.appear = true;
+    //       } else {
+    //         this.appear = false;
+    //       }
+    //     }
+    //   }
+    // })
+  </script>
+</body>
+</html>

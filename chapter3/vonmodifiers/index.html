@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <title>Document</title>
+  <style>
+    #outer {
+      width: 320px;
+      margin: 5px;
+      height: 120px;
+    }
+    #middle {
+      margin: 5px;
+      padding: 5px;
+      width: 250px;
+    }
+    #inner {
+      margin: 5px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+
+    <div id="outer" class="blue white-text text-darken-4"  v-on:click="handleClickEvent">
+    Outer
+      <div id="middle" class="teal darken-2"  v-on:click="handleClickEvent">
+      Middle
+        <div id="inner" class="cyan" v-on:click="handleClickEvent">Inner</div>
+      </div>
+    </div>
+
+    <!-- <div id="outer" class="blue white-text text-darken-4"  v-on:click="handleClickEvent">
+    Outer
+      <div id="middle" class="teal darken-2"  v-on:click.stop="handleClickEvent">
+      Middle
+        <div id="inner" class="cyan" v-on:click="handleClickEvent">Inner</div>
+      </div>
+    </div> -->
+
+    <!-- <div id="outer" class="blue white-text text-darken-4"  v-on:click="handleClickEvent">
+    Outer
+      <div id="middle" class="teal darken-2"  v-on:click="handleClickEvent">
+      Middle
+        <div id="inner" class="cyan" v-on:click.once="handleClickEvent">Inner</div>
+      </div>
+    </div>   -->
+
+    <!-- <a href = "http://www.daum.net" v-on:click.prevent ="goDaum" target="_blank">다음(Daum)으로 이동</a> -->
+
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script>
+    var vm = new Vue({
+      el:'#app',
+      methods: {
+        handleClickEvent($event){
+          //$event.stopPropagation();
+          console.log(`handleClickEvent target : ${$event.target.id}` +` currentTarget: ${$event.currentTarget.id}`);
+        }
+      }
+
+    })
+  </script>
+
+  <!-- <script>
+    for(let elem of document.querySelectorAll('div')) {
+      elem.addEventListener("click", e => console.log(`Capturing: ${elem.id}`), true);
+    }
+  </script> -->
+
+  <!-- <script>
+    var vm = new Vue({
+      el:'#app',
+      methods: {
+        handleClickEvent($event){
+          console.log(`handleClickEvent target : ${$event.target.id}` +` currentTarget: ${$event.currentTarget.id}`);
+        }
+      }
+
+    })
+  </script>   -->
+
+  <!-- <script>  
+    var vm = new Vue({
+      el:'#app',
+      methods: {
+        goDaum(){
+          console.log("Anchor 태그 click됨. Daum페이지로 이동합니다.");
+        }
+      }
+    })
+  </script> -->
+  
+</body>
+</html>

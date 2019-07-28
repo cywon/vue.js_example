@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul{padding-inline-start: 5px;}
+    li{list-style: none; color:red; padding-left:2px;}
+    div{width:240px;text-align:left; margin-bottom:5px;}
+  </style>
+</head>
+<body>
+  <form id="app" @submit="checkForm"  action="http://localhost:8080" method="post">  
+  <!-- <form id="app"  action="http://localhost:8080" method="post">   -->
+    <!-- 유효성 검사시 발생하는 에러를 나타냄 -->
+    <div v-if="errors.length">
+      <strong>에러들:</strong>
+      <ul> <li v-for="error in errors">{{ error }}</li> </ul>
+    </div>    
+    <div>
+      <label for="userId">아이디</label>
+      <input id="userId" v-model="userId" type="text" name="userId"> 
+    </div>    
+    <div>
+      <label for="password">비밀번호</label>
+      <input id="password" v-model="password" type="password" name="password">
+    </div>   
+    <div>
+      <label for="food">좋아하는 음식</label>      
+      <select id="food" v-model="food" name="food">
+        <option>불고기</option>
+        <option>햄버거</option>
+        <option>탕수육</option>
+        <option>김밥</option>
+      </select>    
+    </div>
+    <div><input type="submit" value="보내기"></div>  
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+  new Vue({
+    el:'#app',
+    data: {
+      errors: [], //유효성 체크 에러 저장
+      userId: null,
+      password: null,
+      food: null        
+    },
+    methods: {
+      checkForm: function (e) {
+        if (this.userId && this.password && this.food) { return true; } 
+        this.errors = [];  //초기화를 안해주면 기존의 에러 메시지 계속 추가됨
+        if (!this.userId) { this.errors.push('사용할 아이디를 입력해 주세요.'); } 
+        if (!this.password) { this.errors.push('사용할 암호를 입력해주세요.'); } 
+        if (!this.food) { this.errors.push('좋아하는 음식을 선택해주세요.'); }        
+        e.preventDefault(); 
+      }
+    } 
+  }) 
+  </script>
+</body>
+</html>

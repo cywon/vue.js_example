@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{message}}</p>
+
+    <!-- <button v-on:click="sayHello">확인</button> -->
+
+    <!-- <div>
+      <h4>{{ reversedTitle }}</h4>
+      <h4>공급대가 : {{ price }}</h4>
+      <input type="number" v-model="price">
+      <h4>공급가액 : {{ supplyAmount.toFixed() }}</h4>
+      <h4>부가가치세 : {{ valueAddedTax.toFixed() }}</h4>
+    </div> -->
+
+    <!-- <label>여행하고 싶은 도시:</label>
+    <input v-model="searchCity"  type="text" />
+    <ul>
+      <li v-for="city in filteredCities">{{ city }}</li>
+    </ul> -->
+
+    <!-- <child :text="message"></child> -->
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript">
+
+    // //2.4 props 프로퍼티(Property)
+    // Vue.component('child', {
+    //   props:['text'],
+    //   template: `<div style="background-color:yellow;">{{ text }}</div>`
+    // });
+
+    var vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+          message:'have a nice day!'
+        } 
+      }
+    })
+    
+    ////computed 프로퍼티를 이용한 필터링(filtering)
+    // var vm = new Vue({
+    //   el: '#app',
+    //   data : {
+    //       searchCity:'',
+    //       cities: ['Seoul','Paris', 'Seattle', 'Chicago', 'New York', 'Rome', 'Praha', 'Venezia', 'Budapest']
+    //   },
+    //   computed: {
+    //     filteredCities() {
+    //       return this.cities.filter(item => item.match(this.searchCity.toUpperCase()))
+    //     }
+    //   }
+    // })
+
+    //// 2.3 computed 프로퍼티(Property) 
+    // var vm = new Vue({
+    //     el: '#app',
+    //     data : {
+    //       title:'캡틴 마블', 
+    //       price:10000
+    //     },
+    //     computed: {
+    //       reversedTitle: function () {
+    //         return this.title.split('').reverse().join('')
+    //       },
+    //       supplyAmount: function() {
+    //         return (this.price / 11)*10
+    //       },
+    //       valueAddedTax: function () {
+    //         return (this.price / 11)
+    //       }
+    //     }   
+    // })
+
+
+
+
+
+
+    // var vm = new Vue({
+    //   el: '#app',
+    //   data : { 
+    //     message : 'Have a nice day!' 
+    //   },
+    //   // template: `<div id=”newDiv”>
+    //   //   <div> 첫 번째 div </div>
+    //   //   <div> 두 번째 div </div>
+    //   //   <div> 세 번째 div </div>
+    //   // </div>`
+    //   methods: {
+    //     sayHello: function() {
+    //       alert(this.message);
+    //     }
+    //   }
+
+
+    // })
+  </script>
+</body>
+</html>

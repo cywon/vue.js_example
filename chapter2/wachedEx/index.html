@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+      10진수 : <input type = "number" v-model.number = "dec">
+      2진수 : <input type = "number" v-model.number = "binary">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el:'#app',
+      data: {
+        dec:0,
+        binary:0,
+      },
+      // watch: {
+      //   dec:function(val) {
+      //     this.dec = val;
+      //     this.binary = parseInt(val.toString(2));
+      //   },
+      //   binary : function (val) {
+      //     this.binary = val;
+      //     this.dec = parseInt(val, 2);
+      //   }
+      // }
+
+      watch: {
+        'dec':'convert_bin',
+        'binary' : 'convert_dec'
+      },
+      methods: {
+        convert_bin(val){
+          this.dec = val;
+          this.binary = parseInt(val.toString(2));
+        },
+        convert_dec(val){
+          this.binary = val;
+          this.dec = parseInt(val, 2);
+        }
+      }
+    })
+  </script>  
+</body>
+</html>
